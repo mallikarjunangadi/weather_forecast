@@ -1,6 +1,6 @@
 angular.module('WeatherApp.directive', [])
 
-.directive('googleplace', function($rootScope) {
+.directive('googleplace', function($rootScope, dataPassService) {
     return {
         require: 'ngModel',
         link: function(scope, element, attrs, model) {
@@ -17,10 +17,10 @@ angular.module('WeatherApp.directive', [])
                console.log(place.geometry.location.lng()); 
                var data = {
                  lat: place.geometry.location.lat(),
-                 lng: place.geometry.location.lng(),
-                 address:element.val()
+                 lng: place.geometry.location.lng()
                };
-
+               dataPassService.set(data);
+              // $rootScope.lngLtd = data;
               } 
               
                scope.$apply(function() {

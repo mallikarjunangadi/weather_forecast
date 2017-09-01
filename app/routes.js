@@ -1,11 +1,13 @@
 var request = require('request');
+var dbService = require('./module/dbService')
 
-module.exports = function(app) {
-    app.get('/getWeather', function(req, res) {
-
+module.exports = (app) => {
+  //  app.get('/getWeatherByCoords', dbService.getWeatherByCoords)
+    app.get('/getWeatherByCoords', function(req, res) {
+        console.log('get entered..');
     })
 
-    app.get('*', function(req, res) {
+    app.get('*', (req, res) => {
         res.sendfile('./public/index.html');
     })
 }

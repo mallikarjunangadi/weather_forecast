@@ -1,9 +1,70 @@
+<div ng-controller="homeCtrl" class="mainHomeDiv">
+  <form class="form-inline" ng-submit="searchWeather()">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="weather.city" id="location" googleplace placeholder="Type Location..."
+        required />
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+  </form>
 
-<div ng-controller="homeCtrl">
-<form class="form-inline">
-  <div class="form-group">
-    <input type="text" class="form-control" ng-model="weather.city" id="location" googleplace placeholder="Type Location..."/>
+  <h4>Last 14 days weather forecast</h4>
+  <div ng-repeat="weather in curLocationWeather.list" class="curWeatherDiv">
+    <div class="row" ng-if="$index%4==0"> 
+      <div style="position:relative;" class="col-sm-2" ng-if="curLocationWeather.list[$index]!=undefined">
+        <p>date: {{curLocationWeather.list[$index].dt * 1000 | date:'dd-MM-yyyy'}}</p>
+        <p>morning: {{curLocationWeather.list[$index].temp.morn | TempFilter }} ℃</p>
+        <p>day: {{curLocationWeather.list[$index].temp.day | TempFilter }} ℃</p>
+        <p>evening: {{curLocationWeather.list[$index].temp.eve | TempFilter }} ℃</p>
+        <p>night: {{curLocationWeather.list[$index].temp.night | TempFilter }} ℃</p>
+        <p>min: {{curLocationWeather.list[$index].temp.min | TempFilter }} ℃</p>
+        <p>max: {{curLocationWeather.list[$index].temp.max | TempFilter }} ℃</p>
+      </div>
+      <div style="position:relative;" class="col-sm-2" ng-if="curLocationWeather.list[$index+1]!=undefined">
+        <p>date: {{curLocationWeather.list[$index+1].dt * 1000 | date:'dd-MM-yyyy'}}</p>
+        <p>morning: {{curLocationWeather.list[$index+1].temp.morn | TempFilter }} ℃</p>
+        <p>day: {{curLocationWeather.list[$index+1].temp.day | TempFilter }} ℃</p>
+        <p>evening: {{curLocationWeather.list[$index+1].temp.eve | TempFilter }} ℃</p>
+        <p>night: {{curLocationWeather.list[$index+1].temp.night | TempFilter }} ℃</p>
+        <p>min: {{curLocationWeather.list[$index+1].temp.min | TempFilter }} ℃</p>
+        <p>max: {{curLocationWeather.list[$index+1].temp.max | TempFilter }} ℃</p>
+      </div>
+      <div style="position:relative;" class="col-sm-2" ng-if="curLocationWeather.list[$index+2]!=undefined">
+        <p>date: {{curLocationWeather.list[$index+2].dt * 1000 | date:'dd-MM-yyyy'}}</p>
+        <p>morning: {{curLocationWeather.list[$index+2].temp.morn | TempFilter }} ℃</p>
+        <p>day: {{curLocationWeather.list[$index+2].temp.day | TempFilter }} ℃</p>
+        <p>evening: {{curLocationWeather.list[$index+2].temp.eve | TempFilter }} ℃</p>
+        <p>night: {{curLocationWeather.list[$index+2].temp.night | TempFilter }} ℃</p>
+        <p>min: {{curLocationWeather.list[$index+2].temp.min | TempFilter }} ℃</p>
+        <p>max: {{curLocationWeather.list[$index+2].temp.max | TempFilter }} ℃</p>
+      </div>
+      <div style="position:relative;" class="col-sm-2" ng-if="curLocationWeather.list[$index+3]!=undefined">
+        <p>date: {{curLocationWeather.list[$index+3].dt * 1000 | date:'dd-MM-yyyy'}}</p>
+        <p>morning: {{curLocationWeather.list[$index+3].temp.morn | TempFilter }} ℃</p>
+        <p>day: {{curLocationWeather.list[$index+3].temp.day | TempFilter }} ℃</p>
+        <p>evening: {{curLocationWeather.list[$index+3].temp.eve | TempFilter }} ℃</p>
+        <p>night: {{curLocationWeather.list[$index+3].temp.night | TempFilter }} ℃</p>
+        <p>min: {{curLocationWeather.list[$index+3].temp.min | TempFilter }} ℃</p>
+        <p>max: {{curLocationWeather.list[$index+3].temp.max | TempFilter }} ℃</p>
+      </div>
+      <div style="position:relative;" class="col-sm-2" ng-if="curLocationWeather.list[$index+4]!=undefined">
+        <p>date: {{curLocationWeather.list[$index+4].dt * 1000 | date:'dd-MM-yyyy'}}</p>
+        <p>morning: {{curLocationWeather.list[$index+4].temp.morn | TempFilter }} ℃</p>
+        <p>day: {{curLocationWeather.list[$index+4].temp.day | TempFilter }} ℃</p>
+        <p>evening: {{curLocationWeather.list[$index+4].temp.eve | TempFilter }} ℃</p>
+        <p>night: {{curLocationWeather.list[$index+4].temp.night | TempFilter }} ℃</p>
+        <p>min: {{curLocationWeather.list[$index+4].temp.min | TempFilter }} ℃</p>
+        <p>max: {{curLocationWeather.list[$index+4].temp.max | TempFilter }} ℃</p>
+      </div>
+      <div style="position:relative;" class="col-sm-2" ng-if="curLocationWeather.list[$index+5]!=undefined">
+        <p>date: {{curLocationWeather.list[$index+5].dt * 1000 | date:'dd-MM-yyyy'}}</p>
+        <p>morning: {{curLocationWeather.list[$index+5].temp.morn | TempFilter }} ℃</p>
+        <p>day: {{curLocationWeather.list[$index+5].temp.day | TempFilter }} ℃</p>
+        <p>evening: {{curLocationWeather.list[$index+5].temp.eve | TempFilter }} ℃</p>
+        <p>night: {{curLocationWeather.list[$index+5].temp.night | TempFilter }} ℃</p>
+        <p>min: {{curLocationWeather.list[$index+5].temp.min | TempFilter }} ℃</p>
+        <p>max: {{curLocationWeather.list[$index+5].temp.max | TempFilter }} ℃</p>
+      </div>
+
+    </div>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
 </div>

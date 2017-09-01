@@ -1,0 +1,17 @@
+.mainHomeDiv form {
+     margin: 6vh;
+}
+
+.curWeatherDiv {
+    
+}   
+.curWeatherDiv .row {
+    width:100%;
+    margin: 10px auto;
+
+}
+.curWeatherDiv .col-sm-2{
+   background-color: lightgrey;
+   border: 1px solid black;
+}
+    
