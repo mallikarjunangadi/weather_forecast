@@ -14,4 +14,41 @@
    background-color: lightgrey;
    border: 1px solid black;
 }
+
+#curLocMainDiv {
+    width:90vw;height:auto;background-color:#007b7a;margin:auto;
+}
+#curLocMainDiv p{
+    font-size: 2min;
+    line-height: 1.6;
+    margin: 0 0 7px;
+    color: white;
+}
+
+ #navlist {
+     height:60vh;
+     margin: auto;
+ } 
+ #navlist li
+{
+  display: inline;
+  list-style-type: none;
+ 
+}   
+
+#navlist li div p{ 
+    margin: 0;
+    line-height: 180%;
+} 
+
+#navlist li div {
+    width: 12vw;
+    height:30vh;
+    border-radius: 10%;
+    text-align: center;
+    background-color:lightgray;
+    float:left;
+    margin:1.3vh;
     
+   }
+

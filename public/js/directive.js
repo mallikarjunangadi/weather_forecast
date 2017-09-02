@@ -13,8 +13,8 @@ angular.module('WeatherApp.directive', [])
 
              var place = scope.gPlace.getPlace();
               if (place && place.geometry) {
-               console.log(place.geometry.location.lat()); 
-               console.log(place.geometry.location.lng()); 
+            //   console.log(place.geometry.location.lat()); 
+           //    console.log(place.geometry.location.lng()); 
                var data = {
                  lat: place.geometry.location.lat(),
                  lng: place.geometry.location.lng()

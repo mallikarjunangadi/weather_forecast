@@ -20,17 +20,18 @@ angular.module('WeatherApp.Service', [])
             console.log(lngLtd); 
             var req = {
                 method: "GET", 
-                url: "http://localhost:8080/getWeatherByCoords",
-                data: jQuery.param(lngLtd),
+                url: "/getWeatherByCoords",
+                params: lngLtd,
                 headers:
                 { 
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }
-
+            
             $http(req).then(function(res) {
                deferred.resolve(res);
-            }, function() {
+            }, function(res) {
+                console.log(res);
                deferred.reject();
             })
 
